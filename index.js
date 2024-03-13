@@ -28,11 +28,11 @@ app.use(cors({ origin: true }));
 
 
 app.set('view engine','ejs');
-
-app.listen(3000, (req,res)=>{
-    console.log("App is listening at port no 4000")
+app.listen(process.env.PORT || 3000, (req,res)=>{
+    console.log("App is listening at port no 3000")
    
 })
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/uploads/');
